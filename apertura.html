@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque (en Statistical Datapulse)</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 5 (Título)
+          La gran portada.
+        -->
+        <section class="slide active">
+            <div class="slide-content slide-title-card">
+                
+                <!-- El Evento -->
+                <span class="simposio-title">PRESENTADO EN: STATISTICAL DATAPULSE</span>
+                
+                <!-- La Charla -->
+                <h1 style="color: var(--brand-gold); margin-top: 1.5rem; font-size: 4rem;">Datos al Parque</h1>
+                
+                <!-- Subtítulo de la Charla -->
+                <p>Transformar el desorden en estructuras, y las estructuras en herramientas públicas.</p>
+                
+                <p style="font-size: 1rem; margin-top: 2rem; opacity: 0.8;">Noviembre 7 y 8, 2025</p>
+                
+            </div>
+        </section>
+
+        <!-- 
+          Slide 2 de 5 (El Manifiesto) - NUEVO
+          Un slide dedicado a la gran idea.
+        -->
+        <section class="slide">
+            <div class="slide-content quote-slide">
+                <blockquote>
+                    Una experiencia narrativa y técnica sobre cómo trabajar con datos abiertos desestructurados para convertirlos en modelos de análisis útiles, reutilizables y comprensibles.
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 3 de 5 (Anécdota)
+          (El anterior slide 2)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                 <h2 class="slide-header" style="border: none; margin-bottom: 1.5rem;">🎬 ¿Qué es ‘Datos al Parque’?</h2>
+                
+                <!-- Grid para la anécdota (contenido original) -->
+                <div class="card-grid">
+                    <div class="structure-card card-green">
+                        <i class="fa-solid fa-music"></i>
+                        <h3>Rock al Parque</h3>
+                        <p>Símbolo de acceso público, libertad y espacio colectivo. Un lugar de encuentro.</p>
+                    </div>
+                    <div class="structure-card card-blue">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        <h3>La Transición</h3>
+                        <p>"Esto no es música, pero también es escena pública." Una muestra curada de proyectos.</p>
+                    </div>
+                    <div class="structure-card card-orange">
+                        <i class="fa-solid fa-box-open"></i>
+                        <h3>Artefactos Útiles</h3>
+                        <p>No se lanzan datos crudos: se comparten artefactos listos, abiertos y útiles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 4 de 5 (Problema - Adelanto) - NUEVO
+          Introducimos la tensión.
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border: none; margin-bottom: 2rem;">El Problema: La Falsa Apertura</h2>
+                
+                <p class="slide-subheader" style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto;">
+                    Vemos ejemplos reales de cómo llegan los datos desde el Estado: archivos sueltos, sin consistencia, en PDFs o con nombres de columnas que cambian cada año.
+                </p>
+
+                <!-- Usamos la tarjeta oscura de cita para la frase clave -->
+                <div class="quote-card" style="max-width: 800px; margin: 0 auto;">
+                     <blockquote>
+                        “La publicación sin estructura es otra forma de opacidad.”
+                    </blockquote>
+                    <figcaption>Te posicionas no solo como ingeniero, sino como alguien que arma infraestructuras de interpretación.</figcaption>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 
+          Slide 5 de 5 (Principios / La Promesa)
+          (El anterior slide 3)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="border: none; margin-bottom: 1.5rem; text-align: center;">Nuestra Promesa: ¿Por qué 'al Parque'?</h2>
+                
+                <div class="card-grid">
+                    <div class="structure-card card-purple">
+                        <i class="fa-solid fa-lock-open"></i>
+                        <h3>Abierto y Público</h3>
+                        <p>Como un parque, los artefactos son de todos. El código y los modelos son públicos y accesibles.</p>
+                    </div>
+                    <div class="structure-card card-orange">
+                        <i class="fa-solid fa-hammer"></i>
+                        <h3>Útil y Reutilizable</h3>
+                        <p>No son solo análisis; son herramientas e infraestructuras listas para que otros construyan sobre ellas.</p>
+                    </div>
+                    <div class="structure-card card-green">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h3>Colaborativo</h3>
+                        <p>Es una invitación a que la academia, el periodismo y la ciudadanía usen y mejoren esta infraestructura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="#">
+        &larr; <span class="nav-text">Sección Ant.</span>
+    </a>
+    <a id="page-next-btn" class="nav-button next hidden" href="problema.html">
+        <span class="nav-text">Siguiente Sección</span> &rarr;
+    </a>
+
+    <!-- Enlace a nuestro script -->
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>

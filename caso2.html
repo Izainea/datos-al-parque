@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque - Caso 2: SECOP</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos UNIFICADOS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 4: Título del Caso
+          (Temática Verde)
+        -->
+        <section class="slide active">
+            <div class="slide-content slide-title-card" style="background-color: var(--color-card-green-text);">
+                <span class="simposio-title" style="color: var(--brand-gold);">Caso de Estudio 2</span>
+                <h1 style="color: var(--text-white); font-size: 3.5rem; margin-top: 1rem;">
+                    Observatorio de Contratación (SECOP II)
+                </h1>
+                <p style="font-size: 1.125rem; margin-top: 1.5rem; opacity: 0.9;">
+                    Procesando +1M de contratos para análisis de gasto y desarrollo económico.
+                </p>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 2 de 4: Arquitectura del Pipeline
+          (Basado en el PDF, página 3)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="border-bottom-color: var(--color-card-green-bg);">Automatización del Flujo de Datos</h2>
+                <p class="slide-subheader">Extracción vía API Socrata y procesamiento con <strong>PySpark</strong> para manejar el volumen.</p>
+
+                <div class="infographic-flow-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                    
+                    <!-- Columna 1: Fuentes -->
+                    <div class="flow-column">
+                        <h3 class="flow-header text-blue-700">1. Fuente (API)</h3>
+                        <div class="info-card">
+                            <i class="fa-solid fa-cloud-arrow-down fa-2x text-blue-500 card-icon"></i>
+                            <div>
+                                <strong class="font-bold text-gray-800">API Socrata (Datos Abiertos)</strong>
+                                <span class="card-subtitle">SECOP II</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Proceso (ETL) -->
+                    <div class="flow-column">
+                        <h3 class="flow-header text-orange-700">2. ETL (Python)</h3>
+                        <div class="info-card-small border-orange-500 bg-orange-50">
+                            <i class="fa-brands fa-python fa-lg text-orange-500 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">Extracción y Limpieza</span>
+                        </div>
+                        <div class="info-card-small border-orange-500 bg-orange-50">
+                            <i class="fa-solid fa-gears fa-lg text-orange-500 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">PySpark (+1M filas)</span>
+                        </div>
+                        <div class="info-card-small border-orange-500 bg-orange-50">
+                            <i class="fa-solid fa-arrows-spin fa-lg text-orange-500 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">Actualización Diaria</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna 3: Almacén -->
+                    <div class="flow-column">
+                        <h3 class="flow-header text-green-700">3. Almacén</h3>
+                        <div class="info-card-small border-green-500 bg-green-50">
+                            <i class="fa-solid fa-file-parquet fa-lg text-green-600 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">.parquet (Histórico)</span>
+                        </div>
+                        <div class="info-card-small border-green-500 bg-green-50">
+                            <i class="fa-solid fa-database fa-lg text-green-600 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">SQLite (Modelo)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 3 de 4: Modelo Dimensional
+          (Inspirado en PDF, página 5 y diseño.html)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border-bottom-color: var(--color-card-green-bg);">Modelo Dimensional (SQLite)</h2>
+                <p class="slide-subheader" style="text-align: center;">Estructura optimizada para consultas analíticas del último año disponible.</p>
+                
+                <!-- 
+                  Diagrama de Modelo Estrella
+                  (Reutiliza estilos de 'diseño.html' si están en 'styles.css') 
+                -->
+                <style>
+                    /* Estilos locales para el diagrama de estrella (si no están en styles.css) */
+                    .dimensional-model-diagram { position: relative; min-height: 450px; display: flex; justify-content: center; align-items: center; }
+                    .fact-table { background-color: var(--color-card-orange-bg); color: var(--color-card-orange-text); border: 2px solid var(--color-card-orange-text); padding: 1.5rem; border-radius: 0.5rem; text-align: center; z-index: 10; }
+                    .fact-table i { font-size: 2rem; margin-bottom: 0.5rem; }
+                    .fact-table strong { display: block; font-size: 1.25rem; font-family: var(--font-sans); }
+                    .fact-table span { display: block; font-size: 0.9rem; }
+                    .dim-table { position: absolute; background-color: var(--color-card-green-bg); color: var(--color-card-green-text); border: 1px solid var(--color-card-green-text); padding: 1rem; border-radius: 0.5rem; text-align: center; width: 160px; }
+                    .dim-table i { font-size: 1.5rem; margin-bottom: 0.5rem; }
+                    .dim-table strong { display: block; font-size: 1rem; font-family: var(--font-sans); }
+                    .dim-table.dim-1 { top: 0; left: 50%; transform: translateX(-50%); }
+                    .dim-table.dim-2 { top: 50%; left: 0; transform: translateY(-50%); }
+                    .dim-table.dim-3 { top: 50%; right: 0; transform: translateY(-50%); }
+                    .dim-table.dim-4 { bottom: 0; left: 30%; transform: translateX(-50%); }
+                    .dim-table.dim-5 { bottom: 0; right: 30%; transform: translateX(-50%); }
+                    .dim-table.dim-6 { top: 0; left: 20%; }
+                    .dim-table.dim-7 { top: 0; right: 20%; }
+                    .dim-table.dim-8 { bottom: 0; left: 0; }
+                </style>
+
+                <div class="dimensional-model-diagram">
+                    <div class="fact-table">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>F_Proceso</strong>
+                        <span>(Hechos: Valor, Lotes, Invitados)</span>
+                    </div>
+
+                    <div class="dim-table dim-1"><i class="fa-solid fa-calendar-days"></i><strong>D_Tiempo</strong></div>
+                    <div class="dim-table dim-2"><i class="fa-solid fa-building"></i><strong>D_Entidad</strong></div>
+                    <div class="dim-table dim-3"><i class="fa-solid fa-truck"></i><strong>D_Proveedor</strong></div>
+                    <div class="dim-table dim-4"><i class="fa-solid fa-tag"></i><strong>D_Categoria</strong></div>
+                    <div class="dim-table dim-5"><i class="fa-solid fa-gavel"></i><strong>D_Modalidad</strong></div>
+                    <div class="dim-table dim-6"><i class="fa-solid fa-file-signature"></i><strong>D_TipoContrato</strong></div>
+                    <div class="dim-table dim-7"><i class="fa-solid fa-map-pin"></i><strong>D_UbiEntidad</strong></div>
+                    <div class="dim-table dim-8"><i class="fa-solid fa-location-dot"></i><strong>D_UbiProveedor</strong></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+          Slide 4 de 4: El Entregable
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border-bottom-color: var(--color-card-green-bg);">Resultado y Entregable</h2>
+                <p class="slide-subheader" style="text-align: center;">Una plataforma técnica para identificar ciclos de gasto y concentración de contratación.</p>
+                
+                <div class="two-column-grid-image">
+                    
+                    <div class="text-content">
+                        <h3>Plataforma Técnica</h3>
+                        <p>El resultado es una base de datos <strong>SQLite</strong> portable y un conjunto de archivos <strong>Parquet</strong> que permiten analizar la variación trimestral de la contratación y la concentración por sector.</p>
+                        
+                        <h3>Artefacto para Asistentes</h3>
+                        <p>El repositorio incluye todos los scripts de extracción y el código para generar el modelo estrella.</p>
+                        
+                        <!-- Tarjeta de GitHub (Verde) -->
+                        <div class="structure-card card-green" style="margin-top: 1rem; padding: 1.5rem; text-align: left; align-items: start;">
+                            <h3 style="margin: 0; font-family: var(--font-sans);"><i class="fa-brands fa-github"></i> Repositorio del Proyecto</h3>
+                            <p style="text-align: left; font-size: 0.9rem; margin-top: 0.5rem;">Scripts de PySpark, ETLs y generador del modelo dimensional disponibles para reutilizar.</p>
+                            <a href="https://github.com/ustadistica/desarrollo_social_y_economico" target="_blank" style="font-size: 0.9rem; font-weight: 600; color: var(--color-card-green-text); margin-top: 0.5rem; word-break: break-all;">
+                                https://github.com/ustadistica/desarrollo_social_y_economico
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="image-content" style="border-color: var(--color-card-green-bg);">
+                        <img 
+                            src="https://placehold.co/600x450/e6f8f0/065f46?text=Pipeline+SECOP+con+PySpark" 
+                            alt="Pipeline de SECOP"
+                            style="object-fit: cover; aspect-ratio: 16/10;"
+                        >
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    
+    <!-- El href de "prev" ahora apunta a la página anterior (caso1.html) -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="caso1.html">
+        &larr; <span class="nav-text">Caso 1: Educación</span>
+    </a>
+    
+    <!-- El href de "next" apunta a la siguiente página (caso3.html) -->
+    <a id="page-next-btn" class="nav-button next hidden" href="caso3.html">
+        <span class="nav-text">Caso 3: Minciencias</span> &rarr;
+    </a>
+
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque - Caso 3: Minciencias</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos UNIFICADOS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 4: Título del Caso
+          (Temática Azul)
+        -->
+        <section class="slide active">
+            <div class="slide-content slide-title-card" style="background-color: var(--color-card-blue-text);">
+                <span class="simposio-title" style="color: var(--brand-gold);">Caso de Estudio 3</span>
+                <h1 style="color: var(--text-white); font-size: 3.5rem; margin-top: 1rem;">
+                    Observatorio de Minciencias
+                </h1>
+                <p style="font-size: 1.125rem; margin-top: 1.5rem; opacity: 0.9;">
+                    Análisis de la densidad científica y el capital investigador en Colombia.
+                </p>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 2 de 4: Arquitectura del Pipeline
+          (Basado en PDF, Página 1)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="border-bottom-color: var(--color-card-blue-bg);">Integración y Modelo Estrella (9 Dimensiones)</h2>
+                <p class="slide-subheader">Consolidación de convocatorias (2017, 2019, 2021) y validación cruzada de investigadores.</p>
+
+                <div class="infographic-flow-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                    
+                    <!-- Columna 1: Fuentes -->
+                    <div class="flow-column">
+                        <h3 class="flow-header text-blue-700">1. Fuentes Históricas</h3>
+                        <div class="info-card">
+                            <i class="fa-solid fa-server fa-2x text-blue-500 card-icon"></i>
+                            <div>
+                                <strong class="font-bold text-gray-800">Bases de Convocatorias</strong>
+                                <span class="card-subtitle">2017, 2019, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Proceso (ETL) -->
+                    <div class="flow-column">
+                        <h3 class="flow-header text-orange-700">2. Consolidación</h3>
+                        <div class="info-card-small border-orange-500 bg-orange-50">
+                            <i class="fa-solid fa-filter fa-lg text-orange-500 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">Unificación y Limpieza</span>
+                        </div>
+                        <div class="info-card-small border-orange-500 bg-orange-50">
+                            <i class="fa-solid fa-id-card fa-lg text-orange-500 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">Validación Cruzada de IDs</span>
+                        </div>
+                        <div class="info-card-small border-orange-500 bg-orange-50">
+                            <i class="fa-solid fa-cake-candles fa-lg text-orange-500 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">Control de Edades</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna 3: Almacén (Modelo) -->
+                    <div class="flow-column">
+                        <h3 class="flow-header" style="color: var(--color-card-purple-text);">3. Modelo Estrella</h3>
+                        <div class="info-card" style="border-left-color: var(--color-card-purple-text); background-color: var(--color-card-purple-bg);">
+                            <i class="fa-solid fa-star fa-2x" style="color: var(--color-card-purple-text); width: 2.5rem; text-align: center;"></i>
+                            <div>
+                                <strong class="font-bold text-gray-800">Hechos + 9 Dimensiones</strong>
+                                <span class="card-subtitle">Dim_Investigador, Dim_Area, etc.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 3 de 4: Hallazgos Clave
+          (Basado en PDF, Páginas 2 y 3)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="border-bottom-color: var(--color-card-blue-bg);">Hallazgos: Crecimiento y Clústeres</h2>
+                
+                <div class="main-content-grid">
+                    
+                    <!-- Columna Izquierda: Evolución (de PDF, Pág 2) -->
+                    <div class="content-column">
+                        <h3 class="content-header">Evolución de Investigadores (2017-2021)</h3>
+                        <div class="module-list">
+                            <div class="module-card bg-green-50 border-green-500">
+                                <i class="fa-solid fa-users fa-lg module-icon text-green-600"></i>
+                                <span class="font-semibold text-gray-700 ml-3">Ciencias Sociales</span>
+                                <span class="module-note text-green-700">3,813 &rarr; 6,197</span>
+                            </div>
+                            <div class="module-card bg-white border-gray-400">
+                                <i class="fa-solid fa-microchip fa-lg module-icon text-gray-600"></i>
+                                <span class="font-semibold text-gray-700 ml-3">Ingeniería y Tecnología</span>
+                                <span class="module-note text-gray-700">2,538 &rarr; 4,383</span>
+                            </div>
+                            <div class="module-card bg-white border-gray-400">
+                                <i class="fa-solid fa-flask fa-lg module-icon text-gray-600"></i>
+                                <span class="font-semibold text-gray-700 ml-3">Ciencias Naturales</span>
+                                <span class="module-note text-gray-700">3,029 &rarr; 4,406</span>
+                            </div>
+                            <div class="module-card bg-white border-gray-400">
+                                <i class="fa-solid fa-stethoscope fa-lg module-icon text-gray-600"></i>
+                                <span class="font-semibold text-gray-700 ml-3">Ciencias Médicas y Salud</span>
+                                <span class="module-note text-gray-700">2,093 &rarr; 3,441</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Clústeres (de PDF, Pág 3) -->
+                    <div class="content-column">
+                        <h3 class="content-header">Identificación de Clústeres</h3>
+                        <div class="ranking-card">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <i class="fa-solid fa-user-group text-blue-600 fa-lg" style="width: 1.5rem; text-align: center;"></i>
+                                <div>
+                                    <span class="text-lg text-gray-700"><strong>Clúster 1:</strong> C. Sociales (Bogotá)</span>
+                                    <span class="card-subtitle" style="font-size: 0.85rem;">Edad ~45 | 33% C. Sociales | 38% D. Capital</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranking-card" style="margin-top: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <i class="fa-solid fa-user-group text-blue-600 fa-lg" style="width: 1.5rem; text-align: center;"></i>
+                                <div>
+                                    <span class="text-lg text-gray-700"><strong>Clúster 2:</strong> C. Sociales (Bogotá)</span>
+                                    <span class="card-subtitle" style="font-size: 0.85rem;">Edad ~47 | 43% C. Sociales | 54% D. Capital</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranking-card" style="margin-top: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <i class="fa-solid fa-user-group text-blue-600 fa-lg" style="width: 1.5rem; text-align: center;"></i>
+                                <div>
+                                    <span class="text-lg text-gray-700"><strong>Clúster 3:</strong> Ingeniería (Eje Cafetero)</span>
+                                    <span class="card-subtitle" style="font-size: 0.85rem;">Edad ~42 | 36% Ingeniería | 64% Eje Cafetero</span>
+                                </div>
+                            </div>
+                        </div>
+                         <p style="font-size: 0.9rem; text-align: center; margin-top: 1rem; color: var(--text-gray-600);">
+                            <strong>Hallazgo común:</strong> Todos los clústeres tienen >80% con Doctorado y Maestría.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+          Slide 4 de 4: El Entregable
+          (Basado en PDF, Pág 1 y 3)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border-bottom-color: var(--color-card-blue-bg);">Resultado y Entregable</h2>
+                <p class="slide-subheader" style="text-align: center;">Base para construir indicadores de densidad científica y estrategias de redistribución.</p>
+                
+                <div class="two-column-grid-image">
+                    
+                    <div class="text-content">
+                        <h3>Modelo Analítico</h3>
+                        <p>El artefacto principal es un <strong>modelo estrella de 9 dimensiones</strong> que permite analizar la concentración de capital investigador por edad, residencia y área de conocimiento.</p>
+                        
+                        <h3>Artefacto para Asistentes</h3>
+                        <p>El repositorio incluye los scripts de consolidación y el modelo de datos listo para ser explorado.</p>
+                        
+                        <!-- Tarjeta de GitHub (Azul) -->
+                        <div class="structure-card card-blue" style="margin-top: 1rem; padding: 1.5rem; text-align: left; align-items: start;">
+                            <h3 style="margin: 0; font-family: var(--font-sans);"><i class="fa-brands fa-github"></i> Repositorio del Proyecto</h3>
+                            <p style="text-align: left; font-size: 0.9rem; margin-top: 0.5rem;">Código del ETL, validaciones de datos y scripts para generar el modelo dimensional.</p>
+                            <a href="https://github.com/ustadistica/Observatorio_Ministerio_de_Ciencias_Grupo7" target="_blank" style="font-size: 0.9rem; font-weight: 600; color: var(--color-card-blue-text); margin-top: 0.5rem; word-break: break-all;">
+                                https://github.com/ustadistica/Observatorio_Ministerio_de_Ciencias_Grupo7
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="image-content" style="border-color: var(--color-card-blue-bg);">
+                        <img 
+                            src="httpsZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZAP/ZPlayer-PLACEHOLDER"
+                            alt="Diagrama del Modelo Estrella de Minciencias"
+                            style="object-fit: contain; aspect-ratio: 16/10; background-color: #fafaff;"
+                            title="Reemplazar con la imagen del Modelo Estrella (PDF Pág 1)"
+                        >
+                        <!-- 
+                            NOTA: He usado un placeholder para la imagen del modelo estrella. 
+                            Por favor, reemplaza el 'src' con la imagen de tu PDF (Página 1) 
+                            para un impacto máximo. 
+                        -->
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    
+    <!-- El href de "prev" ahora apunta a la página anterior (caso2.html) -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="caso2.html">
+        &larr; <span class="nav-text">Caso 2: SECOP</span>
+    </a>
+    
+    <!-- El href de "next" apunta a la siguiente página (cierre.html) -->
+    <a id="page-next-btn" class="nav-button next hidden" href="cierre.html">
+        <span class="nav-text">Cierre</span> &rarr;
+    </a>
+
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque - El Taller</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 8 (Título de la Sección)
+        -->
+        <section class="slide active">
+            <div class="slide-content quote-slide">
+                <h2 class="slide-header" style="border:none; font-size: 2.5rem; text-align: center;">🔧 El Taller: Nuestra Metodología</h2>
+                <blockquote>
+                    No solo analizamos datos, construimos la maquinaria para hacerlo de forma robusta y replicable.
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 2 de 8 (Código y Colaboración)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                 <h2 class="slide-header" style="text-align: center; border:none;">Código, Colaboración y Despliegue</h2>
+                
+                <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="structure-card card-blue">
+                        <i class="fa-brands fa-git-alt"></i>
+                        <h3>Git (Control de Versiones)</h3>
+                        <p>Es la base de la trazabilidad. Usamos un flujo <strong>Trunk-Based (simplificado)</strong>: se trabaja en ramas cortas (<code>feature/</code>) que se integran rápidamente a <code>main</code>, garantizando estabilidad.</p>
+                    </div>
+                    <div class="structure-card card-blue">
+                        <i class="fa-brands fa-docker"></i>
+                        <h3>Contenedores (Docker)</h3>
+                        <p>Es la garantía de reproducibilidad. Empaquetamos el código, las librerías y la base de datos (ej. SQLite) en una "caja" (imagen) que funciona igual en cualquier máquina.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 3 de 8 (Gestión de Entornos)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                 <h2 class="slide-header" style="text-align: center; border:none;">Gestión de Entornos y Dependencias</h2>
+                
+                <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="structure-card card-blue">
+                        <i class="fa-brands fa-python"></i>
+                        <h3>pip + venv</h3>
+                        <p>El estándar de Python. <code>pip</code> para paquetes y <code>venv</code> para aislar entornos. Fundamental para la reproducibilidad básica.</p>
+                    </div>
+                    <div class="structure-card card-purple">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                        <h3>Poetry</h3>
+                        <p>Gestión 'todo-en-uno'. Resuelve dependencias complejas, empaqueta y gestiona el entorno virtual, todo desde <code>pyproject.toml</code>.</p>
+                    </div>
+                    <div class="structure-card card-orange">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                        <h3>uv (Dato Interesante)</h3>
+                        <p>Un instalador y 'resolver' escrito en Rust. Es <strong>10-100x más rápido</strong> que <code>pip</code> y <code>poetry</code>. Lo usamos para acelerar flujos de CI/CD.</p>
+                    </div>
+                    <div class="structure-card card-blue">
+                        <i class="fa-brands fa-r-project"></i>
+                        <h3>renv (para R)</h3>
+                        <p>El equivalente en R. <code>renv</code> captura el estado de la librería de R, creando "lockfiles" que garantizan proyectos de R robustos y reproducibles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 4 de 8 (Infografía: Modelo Dimensional)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border:none;">El "Plano": Modelo Dimensional (Estrella)</h2>
+                <p class="slide-subheader" style="text-align: center;">No "juntamos" tablas. Diseñamos un plano donde las preguntas son fáciles de responder.</p>
+                
+                <!-- Infografía del Modelo Estrella -->
+                <div class="dimensional-model-diagram">
+                    <div class="fact-table">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>Tabla de Hechos</strong>
+                        <span>(Las métricas, los números)</span>
+                        <small>Ej: Monto_Contrato, Unidades_Vendidas, Puntaje_Prueba</small>
+                    </div>
+
+                    <div class="dim-table dim-1">
+                        <i class="fa-solid fa-user"></i>
+                        <strong>Dimensión QUIÉN</strong>
+                        <small>Ej: Proveedor, Estudiante</small>
+                    </div>
+                    <div class="dim-table dim-2">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <strong>Dimensión CUÁNDO</strong>
+                        <small>Ej: Fecha, Año, Trimestre</small>
+                    </div>
+                    <div class="dim-table dim-3">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <strong>Dimensión DÓNDE</strong>
+                        <small>Ej: Región, Entidad</small>
+                    </div>
+                    <div class="dim-table dim-4">
+                        <i class="fa-solid fa-tags"></i>
+                        <strong>Dimensión QUÉ</strong>
+                        <small>Ej: Modalidad, Área, Programa</small>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 
+          Slide 5 de 8 (Infografía: Almacenamiento)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border:none;">Almacenamiento Eficiente: Fila vs. Columna</h2>
+                <p class="slide-subheader" style="text-align: center;">La herramienta correcta para el trabajo correcto.</p>
+
+                <div class="storage-comparison-grid">
+                    <div class="comparison-card card-comparison-green">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>SQLite (Basado en Filas)</h3>
+                        <p>Una base de datos completa en un solo archivo. Ideal para modelos portables y acceso rápido a registros completos.</p>
+                        <ul>
+                            <li><strong>Mejor para:</strong> Proyectos medianos (Minciencias, Educación), servir datos a un micrositio, portabilidad.</li>
+                            <li><strong>Analogía:</strong> Un archivador (rápido para sacar una carpeta entera).</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card card-comparison-purple">
+                        <i class="fa-solid fa-file-parquet"></i>
+                        <h3>Parquet (Basado en Columnas)</h3>
+                        <p>Formato optimizado para analítica de Big Data. Lee solo las columnas que necesitas, ahorrando tiempo y cómputo.</p>
+                        <ul>
+                            <li><strong>Mejor para:</strong> Datos masivos (SECOP II, +1M de filas), consultas analíticas (ej. <code>SUM(monto)</code>).</li>
+                            <li><strong>Analogía:</strong> Un libro de contabilidad (rápido para sumar una sola columna).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 6 de 8 (Infografía: Arquitectura de Servicios)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border:none;">Arquitectura de Servicios (El Pipeline)</h2>
+                <p class="slide-subheader" style="text-align: center;">Diseñamos flujos automáticos para que los datos se actualicen solos.</p>
+                
+                <div class="pipeline-flow">
+                    <div class="pipeline-step">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <strong>Fuente</strong>
+                        <span>API (Datos Abiertos)</span>
+                    </div>
+                    <div class="pipeline-arrow">&rarr;</div>
+                    <div class="pipeline-step">
+                        <i class="fa-solid fa-gears"></i>
+                        <strong>ETL</strong>
+                        <span>(Python / R)</span>
+                    </div>
+                    <div class="pipeline-arrow">&rarr;</div>
+                    <div class="pipeline-step">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <strong>Almacén</strong>
+                        <span>(Parquet / SQLite)</span>
+                    </div>
+                    <div class="pipeline-arrow">&rarr;</div>
+                    <div class="pipeline-step">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <strong>Consumo</strong>
+                        <span>(API / Visualizador)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 7 de 8 (Resumen del Taller)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border:none;">El Taller Completo</h2>
+                <p class="slide-subheader" style="text-align: center;">Este es el conjunto de herramientas que usamos para garantizar proyectos replicables, robustos y escalables.</p>
+
+                <div class="tech-summary-grid">
+                    <!-- Fila 1 -->
+                    <div class="tech-icon"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+                    <div class="tech-icon"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+                    <div class="tech-icon"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                    <div class="tech-icon"><i class="fa-brands fa-r-project"></i><span>R Project</span></div>
+                    <!-- Fila 2 -->
+                    <div class="tech-icon"><i class="fa-solid fa-star"></i><span>Mod. Dimensional</span></div>
+                    <div class="tech-icon"><i class="fa-solid fa-database"></i><span>SQLite</span></div>
+                    <div class="tech-icon"><i class="fa-solid fa-file-parquet"></i><span>Parquet</span></div>
+                    <div class="tech-icon"><i class="fa-solid fa-server"></i><span>Servicios/APIs</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 8 de 8 (Transición)
+        -->
+        <section class="slide">
+            <div class="slide-content quote-slide">
+                <h2 class="slide-header" style="border:none; text-align: center;">Listos para Construir</h2>
+                <blockquote>
+                   Con este taller, ahora sí podemos transformar el caos en casos de estudio prácticos.
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="problema.html">
+        &larr; <span class="nav-text">Problema</span>
+    </a>
+    <a id="page-next-btn" class="nav-button next hidden" href="casos.html">
+        <span class="nav-text">Casos de Estudio</span> &rarr;
+    </a>
+
+    <!-- Enlace a nuestro script -->
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>

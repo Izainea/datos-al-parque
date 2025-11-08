@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque - Caso 1: Educación</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos UNIFICADOS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 4: Título del Caso
+          (Tomado de tu index.html, Slide 1)
+        -->
+        <section class="slide active">
+            <div class="slide-content slide-title-card" style="background-color: var(--color-card-purple-text);">
+                <span class="simposio-title" style="color: var(--brand-gold);">Caso de Estudio 1</span>
+                <h1 style="color: var(--text-white); font-size: 3.5rem; margin-top: 1rem;">
+                    Observatorio de Datos de Educación en Colombia
+                </h1>
+                <p style="font-size: 1.125rem; margin-top: 1.5rem; opacity: 0.9;">
+                    Integración de SNIES, Saber Pro y PTE para análisis de política pública.
+                </p>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 2 de 4: Arquitectura
+          (Tomado de tu index.html, Slide 2)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="border-bottom-color: var(--color-card-purple-bg);">Arquitectura del Proceso</h2>
+                <p class="slide-subheader"><strong>Periodo de análisis:</strong> 2021-2024 para todas las fuentes.</p>
+
+                <!-- Infografía de Flujo (de tu index.html) -->
+                <div class="infographic-flow-grid">
+                    
+                    <!-- Columna 1: Fuentes -->
+                    <div class="flow-column">
+                        <h3 class="flow-header text-blue-700">1. Fuentes de Datos</h3>
+                        
+                        <div class="info-card">
+                            <i class="fa-solid fa-building-columns fa-2x text-blue-500 card-icon"></i>
+                            <div>
+                                <strong class="font-bold text-gray-800">Ministerio de Educación (SNIES)</strong>
+                                <span class="card-subtitle">Frecuencia: Anual</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <i class="fa-solid fa-file-signature fa-2x text-blue-500 card-icon"></i>
+                            <div>
+                                <strong class="font-bold text-gray-800">ICFES (Saber PRO)</strong>
+                                <span class="card-subtitle">Frecuencia: Anual</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <i class="fa-solid fa-file-csv fa-2x text-blue-500 card-icon"></i>
+                            <div>
+                                <strong class="font-bold text-gray-800">PTE</strong>
+                                <span class="card-subtitle">Frecuencia: Mensual</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Flecha (Proceso) -->
+                    <div class="flow-arrow">
+                        <i class="fa-solid fa-arrow-right-long fa-3x text-gray-400 desktop-arrow"></i>
+                        <i class="fa-solid fa-arrow-down-long fa-3x text-gray-400 mobile-arrow"></i>
+                    </div>
+                    
+                    <!-- Columna 3: Modelo -->
+                    <div class="flow-column">
+                        <h3 class="flow-header text-orange-700">2. Modelo de Datos</h3>
+                        
+                        <div class="info-card border-orange-500 bg-orange-50">
+                            <i class="fa-solid fa-star fa-2x text-orange-500 card-icon"></i>
+                            <div>
+                                <strong class="font-bold text-gray-800">Hechos: fact_resultados</strong>
+                                <span class="card-subtitle">Contiene todas las métricas</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card-small border-green-500 bg-green-50">
+                            <i class="fa-solid fa-user-graduate fa-lg text-green-600 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">dim_estudiante</span>
+                        </div>
+                        <div class="info-card-small border-green-500 bg-green-50">
+                            <i class="fa-solid fa-school fa-lg text-green-600 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">dim_institucion</span>
+                        </div>
+                        <div class="info-card-small border-green-500 bg-green-50">
+                            <i class="fa-solid fa-book-open fa-lg text-green-600 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">dim_programa</span>
+                        </div>
+                         <div class="info-card-small border-green-500 bg-green-50">
+                            <i class="fa-solid fa-users fa-lg text-green-600 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">dim_familia</span>
+                        </div>
+                         <div class="info-card-small border-green-500 bg-green-50">
+                            <i class="fa-solid fa-calendar-days fa-lg text-green-600 card-icon-small"></i>
+                            <span class="font-medium text-gray-700">dim_tiempo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 3 de 4: Exploración (KPIs y Gráficos)
+          (Tomado de tu index.html, Slide 3)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="border-bottom-color: var(--color-card-purple-bg);">Explorando el universo Saber Pro</h2>
+
+                <!-- Indicadores Principales -->
+                <div class="kpi-grid">
+                    <div class="kpi-card" style="background-color: var(--color-card-purple-bg);">
+                        <span class="kpi-value" style="color: var(--color-card-purple-text);">1.015.276</span>
+                        <span class="kpi-label">Total Estudiantes</span>
+                    </div>
+                    <div class="kpi-card bg-gray-50">
+                        <span class="kpi-value text-gray-800">588.790</span>
+                        <span class="kpi-label">Mujeres (58%)</span>
+                    </div>
+                    <div class="kpi-card bg-gray-50">
+                        <span class="kpi-value text-gray-800">426.486</span>
+                        <span class="kpi-label">Hombres (42%)</span>
+                    </div>
+                     <div class="kpi-card" style="background-color: var(--color-card-orange-bg);">
+                        <span class="kpi-value" style="color: var(--color-card-orange-text);">465.227</span>
+                        <span class="kpi-label">En Bogotá (46%)</span>
+                    </div>
+                </div>
+
+                <!-- Hallazgos y Gráficos -->
+                <div class="main-content-grid">
+                    
+                    <!-- Columna Izquierda: Gráficos Estáticos -->
+                    <div class="content-column">
+                        
+                        <div>
+                            <h3 class="content-header">Universidades (Top 2)</h3>
+                            <div class="ranking-card">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <i class="fa-solid fa-school text-blue-600 fa-lg" style="width: 1.5rem; text-align: center;"></i>
+                                    <span class="text-lg text-gray-700">Uniminuto</span>
+                                </div>
+                                <span class="text-lg font-bold text-blue-700">61.500 (6%)</span>
+                            </div>
+                            <div class="ranking-card" style="margin-top: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <i class="fa-solid fa-school text-gray-500 fa-lg" style="width: 1.5rem; text-align: center;"></i>
+                                    <span class="text-lg text-gray-700">Politécnico Grancolombiano</span>
+                                </div>
+                                <span class="text-lg font-bold text-gray-800">38.000 (3.8%)</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="content-header">Distribución por Género</h3>
+                            <div class="gender-grid">
+                                <div class="gender-card border-blue-600">
+                                    <i class="fa-solid fa-person-dress fa-4x text-blue-600 mb-3"></i>
+                                    <h4 class="gender-title">Mujeres</h4>
+                                    <p class="gender-value text-blue-700">588.790</p>
+                                    <p class="gender-percent">(58.0%)</p>
+                                </div>
+                                <div class="gender-card border-gray-500">
+                                    <i class="fa-solid fa-person fa-4x text-gray-500 mb-3"></i>
+                                    <h4 class="gender-title">Hombres</h4>
+                                    <p class="gender-value text-gray-800">426.486</p>
+                                    <p class="gender-percent">(42.0%)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Hallazgos y Promedios -->
+                    <div class="content-column">
+                        <div>
+                            <h3 class="content-header">Principales Hallazgos</h3>
+                            <ul class="findings-list">
+                                <li style="font-size: medium;"><strong>Evolución por año:</strong> Inglés tiene el mejor promedio. Comunicación Escrita tiene el promedio más bajo.</li>
+                                <li style="font-size: medium;"><strong>Viviendo las diferencias:</strong> Ambos géneros se concentran sobre todo en estratos 2 y 3.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="content-header">Promedios por Módulo</h3>
+                            <div class="module-list">
+                                <div class="module-card bg-green-50 border-green-500">
+                                    <i class="fa-solid fa-globe fa-lg module-icon text-green-600"></i>
+                                    <span class="font-semibold text-gray-700 ml-3">Inglés</span>
+                                    <span class="module-note text-green-700">MEJOR PROMEDIO (162)</span>
+                                </div>
+                                <div class="module-card bg-white border-gray-400">
+                                    <i class="fa-solid fa-book-open-reader fa-lg module-icon text-gray-600"></i>
+                                    <span class="font-semibold text-gray-700 ml-3">Lectura Crítica (158)</span>
+                                </div>
+                                <div class="module-card bg-white border-gray-400">
+                                    <i class="fa-solid fa-users fa-lg module-icon text-gray-600"></i>
+                                    <span class="font-semibold text-gray-700 ml-3">Competencias Ciud. (155)</span>
+                                </div>
+                                <div class="module-card bg-white border-gray-400">
+                                    <i class="fa-solid fa-calculator fa-lg module-icon text-gray-600"></i>
+                                    <span class="font-semibold text-gray-700 ml-3">Raz. Cuantitativo (152)</span>
+                                </div>
+                                <div class="module-card bg-red-50 border-red-500">
+                                    <i class="fa-solid fa-pen-ruler fa-lg module-icon text-red-600"></i>
+                                    <span class="font-semibold text-gray-700 ml-3">Com. Escrita</span>
+                                    <span class="module-note text-red-700">MENOR PROMEDIO (148)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+          Slide 4 de 4: El Entregable (¡NUEVO!)
+          Conectando con la narrativa de "Artefactos"
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border-bottom-color: var(--color-card-purple-bg);">Resultado y Entregable</h2>
+                <p class="slide-subheader" style="text-align: center;">El "artefacto" de este proyecto es un micrositio exploratorio y un repositorio de código.</p>
+                
+                <div class="two-column-grid-image">
+                    
+                    <div class="text-content">
+                        <h3>Micrositio Exploratorio</h3>
+                        <p>El resultado final no es un reporte estático, sino un <strong>"slideshow HTML" navegable</strong> (como el que estás viendo) que permite explorar los KPIs y hallazgos de forma interactiva.</p>
+                        
+                        <h3>Artefacto para Asistentes</h3>
+                        <p>Dejamos este proyecto como una herramienta pública. El código, el modelo de datos y la visualización están disponibles:</p>
+                        
+                        <!-- Tarjeta de GitHub -->
+                        <div class="structure-card card-blue" style="margin-top: 1rem; padding: 1.5rem; text-align: left; align-items: start;">
+                            <h3 style="margin: 0; font-family: var(--font-sans);"><i class="fa-brands fa-github"></i> Repositorio del Proyecto</h3>
+                            <p style="text-align: left; font-size: 0.9rem; margin-top: 0.5rem;">Todo el código de ETL y el modelo de datos SQLite están disponibles para descargar y replicar.</p>
+                            <a href="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia" target="_blank" style="font-size: 0.9rem; font-weight: 600; color: var(--color-card-blue-text); margin-top: 0.5rem; word-break: break-all;">
+                                https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="image-content" style="border-color: var(--color-card-purple-bg);">
+                        <img 
+                            src="https://placehold.co/600x450/f5f3ff/5b21b6?text=Captura+del+Micrositio+HTML" 
+                            alt="Micrositio de Educación"
+                            style="object-fit: cover; aspect-ratio: 16/10;"
+                        >
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    
+    <!-- El href de "prev" ahora apunta a la página anterior (casos.html) -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="casos.html">
+        &larr; <span class="nav-text">Casos</span>
+    </a>
+    
+    <!-- El href de "next" apunta a la siguiente página (caso2.html) -->
+    <a id="page-next-btn" class="nav-button next hidden" href="caso2.html">
+        <span class="nav-text">Caso 2: SECOP</span> &rarr;
+    </a>
+
+    <!-- 
+      Tu script.js original se llama 'slide_manager.js' 
+      en nuestros archivos anteriores. Lo usaré.
+    -->
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque - El Problema</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 4 (Título de la Sección)
+          (Sin cambios)
+        -->
+        <section class="slide active">
+            <div class="slide-content quote-slide">
+                <h2 class="slide-header" style="border:none; font-size: 2.5rem; text-align: center;">🧱 Problema Común</h2>
+                <blockquote>
+                    Abiertos, pero Caóticos
+                </blockquote>
+                <p class="slide-subheader" style="margin-top: 1rem;">Los datos están "abiertos", pero en la práctica son inaccesibles.</p>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 2 de 4 (El Caos - Visual)
+          *** REESCRITO PARA MÁS IMPACTO VISUAL ***
+          Ahora mostramos ejemplos visuales del caos, en lugar de solo iconos.
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                 <h2 class="slide-header" style="text-align: center; border:none;">Ejemplos Reales: El Caos Inicial</h2>
+                 <p class="slide-subheader" style="text-align: center;">Los datos están "abiertos", pero así es como llegan en la práctica:</p>
+                
+                 <!-- 
+                   Usamos el card-grid, pero ajustamos el padding y alineación
+                   para que las imágenes sean las protagonistas. 
+                 -->
+                <div class="card-grid" style="align-items: start;">
+                    
+                    <!-- 1. Datos en PDF -->
+                    <div class="structure-card card-red" style="padding: 1.5rem;">
+                        <!-- Icono más sutil -->
+                        <i class="fa-solid fa-file-pdf" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
+                        <h3 style="font-size: 1.125rem;">1. Atrapados en PDF</h3>
+                        <p style="font-size: 0.9rem; min-height: 3em; margin-bottom: 1rem;">Tablas que no se pueden copiar, solo "ver".</p>
+                        
+                        <!-- Placeholder visual del problema -->
+                        <img 
+                            src="https://placehold.co/400x300/fef2f2/b91c1c?text=Tabla+en+PDF" 
+                            alt="Datos en un PDF" 
+                            style="width: 100%; border-radius: 0.25rem; border: 1px solid var(--color-card-red-text); aspect-ratio: 4/3; object-fit: cover;"
+                            onerror="this.src='https://placehold.co/400x300/fef2f2/b91c1c?text=Error+cargando+imagen'"
+                        >
+                    </div>
+
+                    <!-- 2. Codificación Rota -->
+                    <div class="structure-card card-red" style="padding: 1.5rem;">
+                        <i class="fa-solid fa-file-csv" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
+                        <h3 style="font-size: 1.125rem;">2. Codificación Rota</h3>
+                        <p style="font-size: 0.9rem; min-height: 3em; margin-bottom: 1rem;">Archivos CSV que se vuelven ilegibles (ej. 'BogotÃ¡').</p>
+
+                        <!-- Placeholder visual del problema -->
+                        <img 
+                            src="https://placehold.co/400x300/fef2f2/b91c1c?text=BogotÃ¡+D.C." 
+                            alt="Codificación rota en un CSV" 
+                            style="width: 100%; border-radius: 0.25rem; border: 1px solid var(--color-card-red-text); aspect-ratio: 4/3; object-fit: cover;"
+                            onerror="this.src='https://placehold.co/400x300/fef2f2/b91c1c?text=Error+cargando+imagen'"
+                        >
+                    </div>
+
+                    <!-- 3. Columnas Inconsistentes -->
+                    <div class="structure-card card-red" style="padding: 1.5rem;">
+                        <i class="fa-solid fa-file-excel" style="font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
+                        <h3 style="font-size: 1.125rem;">3. Inconsistencia</h3>
+                        <p style="font-size: 0.9rem; min-height: 3em; margin-bottom: 1rem;">Nombres de columnas que cambian cada año ('ID' vs 'Identificación').</p>
+                        
+                        <!-- Placeholder visual del problema -->
+                        <img 
+                            src="https://placehold.co/400x300/fef2f2/b91c1c?text=Col_ID+vs+Identificaci%C3%B3n" 
+                            alt="Columnas inconsistentes" 
+                            style="width: 100%; border-radius: 0.25rem; border: 1px solid var(--color-card-red-text); aspect-ratio: 4/3; object-fit: cover;"
+                            onerror="this.src='https://placehold.co/400x300/fef2f2/b91c1c?text=Error+cargando+imagen'"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 3 de 4 (La Tesis / Punchline)
+          (Sin cambios)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <!-- Usamos la tarjeta oscura de cita para la frase clave -->
+                <div class="quote-card" style="max-width: 800px; margin: auto;">
+                     <blockquote>
+                        “La publicación sin estructura es otra forma de opacidad.”
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 
+          Slide 4 de 4 (El Giro / Nuestra Posición)
+          (Sin cambios)
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="border: none; margin-bottom: 1.5rem; text-align: center;">Nuestra Posición</h2>
+                <p class="slide-subheader" style="text-align: center;">No somos solo ingenieros. Tomamos el caos y construimos la estructura que permite el análisis.</p>
+                
+                <div class="card-grid" style="grid-template-columns: 1fr 1fr; align-items: stretch;">
+                    <div class="structure-card card-red">
+                        <i class="fa-solid fa-dumpster-fire"></i>
+                        <h3>El Ingeniero (Reactivo)</h3>
+                        <p>Limpia los datos desordenados para *un* análisis específico. El trabajo se pierde al siguiente reporte.</p>
+                    </div>
+                    <div class="structure-card card-green">
+                        <i class="fa-solid fa-sitemap"></i>
+                        <h3>El Arquitecto (Proactivo)</h3>
+                        <p>Diseña un modelo de datos reutilizable que habilita *múltiples* análisis futuros para todos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    <!-- El href de "prev" ahora apunta a la página anterior -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="apertura.html">
+        &larr; <span class="nav-text">Apertura</span>
+    </a>
+    <!-- El href de "next" apunta a la siguiente página -->
+    <a id="page-next-btn" class="nav-button next hidden" href="diseño.html">
+        <span class="nav-text">Diseño</span> &rarr;
+    </a>
+
+    <!-- Enlace a nuestro script -->
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>

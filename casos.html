@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque - Casos de Aplicación</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 2 (Título de la Sección)
+          (Sin cambios)
+        -->
+        <section class="slide active">
+            <div class="slide-content quote-slide">
+                <h2 class="slide-header" style="border:none; font-size: 2.5rem; text-align: center;">🧪 Casos de Aplicación</h2>
+                <blockquote>
+                    Poniendo a prueba la arquitectura: tres problemas, tres soluciones técnicas.
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 2 de 2 (Los Artefactos - ¡NUEVO!)
+          Aquí adelantamos lo que se llevan los asistentes,
+          usando las tarjetas de colores.
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border:none;">🧰 ¿Qué dejamos "en el Parque"?</h2>
+                <p class="slide-subheader" style="text-align: center;">Cada caso de estudio deja herramientas públicas listas para reusar:</p>
+                
+                <div class="card-grid">
+                    
+                    <div class="structure-card card-green">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Bases Limpias (SQLite)</h3>
+                        <p>Modelos de datos portables, documentados y listos para consultar en un solo archivo.</p>
+                    </div>
+                    
+                    <div class="structure-card card-blue">
+                        <i class="fa-brands fa-github"></i>
+                        <h3>Código Abierto (Repos)</h3>
+                        <p>Todos los scripts de extracción (ETL) y análisis (Python/R) con licencia libre en GitHub.</p>
+                    </div>
+
+                    <div class="structure-card card-purple">
+                        <i class="fa-solid fa-file-parquet"></i>
+                        <h3>Datos Masivos (Parquet)</h3>
+                        <p>Archivos optimizados para análisis de alto rendimiento (ej. +1M contratos de SECOP).</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <!-- 
+      Ahora que hay 2 slides, los botones internos
+      serán gestionados automáticamente por slide_manager.js
+    -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    
+    <!-- El href de "prev" ahora apunta a la página anterior (diseño.html) -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="diseño.html">
+        &larr; <span class="nav-text">Diseño</span>
+    </a>
+    
+    <!-- 
+      ¡CAMBIO IMPORTANTE! 
+      El href de "next" apunta al NUEVO archivo caso1.html
+      y solo aparecerá en el último slide (el de los artefactos).
+    -->
+    <a id="page-next-btn" class="nav-button next hidden" href="caso1.html">
+        <span class="nav-text">Caso 1: Educación</span> &rarr;
+    </a>
+
+    <!-- Enlace a nuestro script -->
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos al Parque - Cierre</title>
+    
+    <!-- Carga de Fuentes y Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Enlace a nuestros estilos UNIFICADOS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- El contenedor principal de la presentación -->
+    <main id="presentation-container">
+
+        <!-- 
+          Slide 1 de 5: Resumen de Artefactos
+        -->
+        <section class="slide active">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border:none;">🧰 Artefactos Resultantes</h2>
+                <p class="slide-subheader" style="text-align: center;">Infraestructura pública lista para ser reusada por todos.</p>
+                
+                <div class="card-grid">
+                    
+                    <div class="structure-card card-green">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Bases Limpias (SQLite)</h3>
+                        <p>Modelos de datos portables, documentados y listos para consultar en un solo archivo.</p>
+                    </div>
+                    
+                    <div class="structure-card card-blue">
+                        <i class="fa-brands fa-github"></i>
+                        <h3>Código Abierto (Repos)</h3>
+                        <p>Todos los scripts de extracción (ETL) y análisis (Python/R) con licencia libre en GitHub.</p>
+                    </div>
+
+                    <div class="structure-card card-purple">
+                        <i class="fa-solid fa-file-parquet"></i>
+                        <h3>Datos Masivos (Parquet)</h3>
+                        <p>Archivos optimizados para análisis de alto rendimiento (ej. +1M contratos de SECOP).</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+          Slide 2 de 5: Frase clave de Artefactos
+        -->
+        <section class="slide">
+            <div class="slide-content quote-slide">
+                <div class="quote-card" style="max-width: 800px; margin: auto;">
+                    <blockquote>
+                       “Cada proyecto deja algo listo para ser reusado. No entregamos resultados: dejamos herramientas.”
+                   </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 3 de 5: El Cierre Político
+        -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-header" style="text-align: center; border:none;">🧠 Cierre: Técnica como Agencia Pública</h2>
+                <p class="slide-subheader" style="text-align: center;">Por qué hacemos esto y por qué es importante.</p>
+
+                <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="structure-card card-blue" style="text-align: left; align-items: start;">
+                        <i class="fa-solid fa-sitemap"></i>
+                        <h3>Política en Silencio</h3>
+                        <p>Estructurar datos es crear legibilidad. Es una acción política que habilita el debate público informado.</p>
+                    </div>
+                    <div class="structure-card card-orange" style="text-align: left; align-items: start;">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Soberanía Analítica</h3>
+                        <p>Este stack técnico no es solo eficiencia: es la capacidad de construir nuestras propias herramientas de análisis.</p>
+                    </div>
+                </div>
+                
+                <h3 style="font-family: var(--font-sans); text-align: center; font-size: 1.25rem; margin-top: 2.5rem; font-weight: 600;">
+                    Un llamado a replicar este trabajo.
+                </h3>
+            </div>
+        </section>
+        
+        <!-- 
+          Slide 4 de 5: Frase Final
+        -->
+        <section class="slide">
+            <div class="slide-content quote-slide">
+                <div class="quote-card" style="max-width: 900px; margin: auto; background-color: var(--brand-blue-dark);">
+                     <blockquote style="font-size: 2rem;">
+                        “No se trata de tener datos. Se trata de hacerlos hablar, y que hablen claro.”
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Slide 5 de 5: Gracias y Repositorios
+        -->
+        <section class="slide">
+            <div class="slide-content closing-card" style="background-color: var(--text-gray-800); min-height: 500px;">
+                <h1 style="color: var(--brand-gold); font-size: 4rem; font-family: var(--font-sans);">¡Gracias!</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9;">Descarga los artefactos de esta charla:</p>
+                
+                <div class="github-links">
+                    <a href="https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia" target="_blank" class="github-link">
+                        <i class="fa-brands fa-github"></i>
+                        <span><b>Caso 1: Educación</b><br>https://github.com/ustadistica/Proyecto-Observatorio-Datos-de-Educacion-en-Colombia</span>
+                    </a>
+                    <a href="https://github.com/ustadistica/desarrollo_social_y_economico" target="_blank" class="github-link">
+                        <i class="fa-brands fa-github"></i>
+                        <span><b>Caso 2: SECOP II</b><br>https://github.com/ustadistica/desarrollo_social_y_economico</span>
+                    </a>
+                    <a href="https://github.com/ustadistica/Observatorio_Ministerio_de_Ciencias_Grupo7" target="_blank" class="github-link">
+                        <i class="fa-brands fa-github"></i>
+                        <span><b>Caso 3: Minciencias</b><br>https://github.com/ustadistica/Observatorio_Ministerio_de_Ciencias_Grupo7</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navegación INTERNA (controlada por JS) -->
+    <button id="slide-prev-btn" class="nav-button prev">&larr; <span class="nav-text">Interno</span></button>
+    <button id="slide-next-btn" class="nav-button next"><span class="nav-text">Interno</span> &rarr;</button>
+
+    <!-- Navegación EXTERNA (Enlaces HTML) -->
+    
+    <!-- El href de "prev" ahora apunta a la página anterior (caso3.html) -->
+    <a id="page-prev-btn" class="nav-button prev hidden" href="caso3.html">
+        &larr; <span class="nav-text">Caso 3: Minciencias</span>
+    </a>
+    
+    <!-- El href de "next" apunta a la página inicial (apertura.html) para un ciclo -->
+    <a id="page-next-btn" class="nav-button next hidden" href="apertura.html">
+        <span class="nav-text">Reiniciar</span> &circlearrowright;
+    </a>
+
+    <script src="slide_manager.js"></script>
+
+</body>
+</html>
